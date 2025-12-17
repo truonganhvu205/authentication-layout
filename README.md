@@ -5,5 +5,3 @@
 /auth/forgotpassword
 
 /auth/resetpassword
-
-/user/changepassword
