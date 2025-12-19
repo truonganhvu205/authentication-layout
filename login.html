@@ -18,13 +18,13 @@
                     <input type="text" class="form-control"
                     id="username" placeholder="Username"
                     autocomplete="username">
-                    <label for="username">Username</label>
+                    <label for="username" class="text-muted">Username</label>
                 </div>
                 <div class="form-floating mb-2">
                     <input type="password" class="form-control"
                     id="password" placeholder="Password"
                     autocomplete="current-password">
-                    <label for="password">Password</label>
+                    <label for="password" class="text-muted">Password</label>
                 </div>
 
                 <div class="mb-4 d-flex justify-content-between align-items-center">
@@ -37,10 +37,11 @@
                     class="small text-decoration-none">Forgot Password?</a>
                 </div>
                 
-                <div class="text-center">
+                <div>
                     <button type="submit" id="login_btn"
                     class="btn btn-primary w-100 mb-2">Login</button>
-                    <p>Don't have an account? 
+                    
+                    <p class="small text-muted text-center">Don't have an account? 
                         <a href="/register.html"
                         class="text-decoration-none">Register</a>
                     </p>

@@ -3,12 +3,8 @@ function password_isValid(password) {
         return false
     }
 
-    const hasUpperCase = /[A-Z]/.test(password)
-    const hasLowerCase = /[a-z]/.test(password)
-    const hasDigit = /[0-9]/.test(password)
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password)
-
-    return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar
+    const isValid = /^[A-Za-z0-9!@#$%^&*(),.?":{}|<>]+$/.test(password)
+    return isValid
 }
 
 export default password_isValid

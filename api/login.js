@@ -8,19 +8,21 @@ const password = document.getElementById('password')
 const loginForm = document.getElementById('login_form')
 
 username.addEventListener('input', e => {
-    if(username.value.trim()) {
+    if(!username.value.trim()) {
         clearErr(username)
-    } else {
-        err(username)
+        return
     }
+
+    clearErr(username)
 })
 
 password.addEventListener('input', e => {
-    if(password.value.trim()) {
+    if(!password.value.trim()) {
         clearErr(password)
-    } else {
-        err(password)
+        return
     }
+
+    clearErr(password)
 })
 
 loginForm.addEventListener('submit', e => {

@@ -29,8 +29,9 @@ passwordConfirm.addEventListener('input', e => {
 resetpasswordForm.addEventListener('submit', e => {
     e.preventDefault()
 
-    if(!password.value.trim()) {
+    if(!password.value.trim() || !passwordConfirm.value.trim()) {
         err(password)
+        err(passwordConfirm)
         return
     }
 
