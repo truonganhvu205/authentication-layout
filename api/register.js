@@ -16,7 +16,6 @@ const registerForm = document.getElementById('register_form')
 document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
         username?.focus()
-        username?.select()
     })
     
     username.addEventListener('input', e => {
@@ -40,14 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             err(password)
         } else {
             clearErr(password)
-        }
-        
-        if (passwordConfirm.value.trim()) {
-            if (!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
-                err(passwordConfirm)
-            } else {
-                clearErr(passwordConfirm)
-            }
         }
     })
 

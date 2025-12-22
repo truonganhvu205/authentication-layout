@@ -10,7 +10,6 @@ const forgotPasswordForm = document.getElementById('forgotPassword_form')
 document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
         email?.focus()
-        email?.select()
     })
 
     email.addEventListener('input', () => {

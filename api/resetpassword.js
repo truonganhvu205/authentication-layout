@@ -12,7 +12,6 @@ const resetpasswordForm = document.getElementById('resetpassword_form')
 document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
         password?.focus()
-        password?.select()
     })
 
     password.addEventListener('input', e => {

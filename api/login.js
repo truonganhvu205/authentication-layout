@@ -10,7 +10,6 @@ const loginForm = document.getElementById('login_form')
 document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
         username?.focus()
-        username?.select()
     })
     
     username.addEventListener('input', e => {
