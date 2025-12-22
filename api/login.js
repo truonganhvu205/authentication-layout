@@ -7,27 +7,28 @@ const username = document.getElementById('username')
 const password = document.getElementById('password')
 const loginForm = document.getElementById('login_form')
 
-username.addEventListener('input', e => {
-    if(!username.value.trim()) {
+document.addEventListener('DOMContentLoaded', () => {
+    username.addEventListener('input', e => {
         clearErr(username)
-    }
+    })
 
-    clearErr(username)
-})
-
-password.addEventListener('input', e => {
-    if(!password.value.trim()) {
+    password.addEventListener('input', e => {
         clearErr(password)
-    }
+    })
 
-    clearErr(password)
-})
+    loginForm.addEventListener('submit', e => {
+        e.preventDefault()
+        e.stopPropagation()
 
-loginForm.addEventListener('submit', e => {
-    e.preventDefault()
+        if(!username.value.trim() || !password.value.trim()) {
+            err(username)
+            err(password)
 
-    if(!username.value.trim() || !password.value.trim()) {
-        err(username)
-        err(password)
-    }
+            setTimeout(() => {
+                username?.focus()
+                username?.select()
+            }, 150)
+            return
+        }
+    })
 })

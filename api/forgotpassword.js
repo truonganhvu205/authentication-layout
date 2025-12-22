@@ -17,6 +17,7 @@ email.addEventListener('input', () => {
 
 forgotPasswordForm.addEventListener('submit', e => {
     e.preventDefault()
+    e.stopPropagation()
 
     if(!email.value.trim()) {
         err(email)
