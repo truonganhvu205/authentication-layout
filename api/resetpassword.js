@@ -1,8 +1,8 @@
 import {
     password_isValid,
     password_isMatch,
-    err,
-    clearErr,
+    inputErr,
+    clearInputErr,
 } from '../utils/index.js'
 
 const password = document.getElementById('password')
@@ -17,29 +17,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 password.addEventListener('input', () => {
     if(password.value.trim() && !password_isValid(password.value.trim())) {
-        err(password)
+        inputErr(password)
     } else {
-        clearErr(password)
+        clearInputErr(password)
     }
     
     if (passwordConfirm.value.trim()) {
         if (!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
-            err(passwordConfirm)
+            inputErr(passwordConfirm)
         } else {
-            clearErr(passwordConfirm)
+            clearInputErr(passwordConfirm)
         }
     }
 })
 
 passwordConfirm.addEventListener('input', () => {
     if(!passwordConfirm.value.trim()) {
-        clearErr(passwordConfirm)
+        clearInputErr(passwordConfirm)
     }
     
     if(!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
-        err(passwordConfirm)
+        inputErr(passwordConfirm)
     } else {
-        clearErr(passwordConfirm)
+        clearInputErr(passwordConfirm)
     }
 })
 
@@ -48,8 +48,8 @@ resetpasswordForm.addEventListener('submit', e => {
     e.stopPropagation()
 
     if(!password.value.trim() || !passwordConfirm.value.trim()) {
-        err(password)
-        err(passwordConfirm)
+        inputErr(password)
+        inputErr(passwordConfirm)
 
         requestAnimationFrame(() => {
             password?.focus()

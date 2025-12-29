@@ -1,6 +1,6 @@
 import {
-    err,
-    clearErr,
+    inputErr,
+    clearInputErr,
 } from '../utils/index.js'
 
 const username = document.getElementById('username')
@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 username.addEventListener('input', () => {
-    clearErr(username)
+    clearInputErr(username)
 })
 
 password.addEventListener('input', () => {
-    clearErr(password)
+    clearInputErr(password)
 })
 
 loginForm.addEventListener('submit', e => {
@@ -26,8 +26,8 @@ loginForm.addEventListener('submit', e => {
     e.stopPropagation()
 
     if(!username.value.trim() || !password.value.trim()) {
-        err(username)
-        err(password)
+        inputErr(username)
+        inputErr(password)
 
         requestAnimationFrame(() => {
             username?.focus()

@@ -1,7 +1,7 @@
 import {
     email_isValid,
-    err,
-    clearErr,
+    inputErr,
+    clearInputErr,
 } from '../utils/index.js'
 
 const email = document.getElementById('email')
@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 email.addEventListener('input', () => {
     if (email.value.trim() && !email_isValid(email.value.trim())) {
-        err(email)
+        inputErr(email)
     } else {
-        clearErr(email)
+        clearInputErr(email)
     }
 })
 
@@ -26,7 +26,7 @@ forgotPasswordForm.addEventListener('submit', e => {
     e.stopPropagation()
 
     if(!email.value.trim()) {
-        err(email)
+        inputErr(email)
 
         requestAnimationFrame(() => {
             email?.focus()

@@ -3,8 +3,8 @@ import {
     email_isValid,
     password_isValid,
     password_isMatch,
-    err,
-    clearErr,
+    inputErr,
+    clearInputErr,
 } from '../utils/index.js'
 
 const username = document.getElementById('username')
@@ -21,45 +21,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 username.addEventListener('input', () => {
     if (username.value.trim() && !username_isValid(username.value.trim())) {
-        err(username)
+        inputErr(username)
     } else {
-        clearErr(username)
+        clearInputErr(username)
     }
 })
 
 email.addEventListener('input', () => {
     if (email.value.trim() && !email_isValid(email.value.trim())) {
-        err(email)
+        inputErr(email)
     } else {
-        clearErr(email)
+        clearInputErr(email)
     }
 })
 
 password.addEventListener('input', () => {
     if(password.value.trim() && !password_isValid(password.value.trim())) {
-        err(password)
+        inputErr(password)
     } else {
-        clearErr(password)
+        clearInputErr(password)
     }
     
     if (passwordConfirm.value.trim()) {
         if (!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
-            err(passwordConfirm)
+            inputErr(passwordConfirm)
         } else {
-            clearErr(passwordConfirm)
+            clearInputErr(passwordConfirm)
         }
     }
 })
 
 passwordConfirm.addEventListener('input', () => {
     if(!passwordConfirm.value.trim()) {
-        clearErr(passwordConfirm)
+        clearInputErr(passwordConfirm)
     }
 
     if(!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
-        err(passwordConfirm)
+        inputErr(passwordConfirm)
     } else {
-        clearErr(passwordConfirm)
+        clearInputErr(passwordConfirm)
     }
 })
 
@@ -69,10 +69,10 @@ registerForm.addEventListener('submit', e => {
 
     if(!username.value.trim() || !email.value.trim() || 
     !password.value.trim() || !passwordConfirm.value.trim()) {
-        err(username)
-        err(email)
-        err(password)
-        err(passwordConfirm)
+        inputErr(username)
+        inputErr(email)
+        inputErr(password)
+        inputErr(passwordConfirm)
 
         requestAnimationFrame(() => {
             username?.focus()
