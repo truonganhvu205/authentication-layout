@@ -1,15 +1,23 @@
 const errMessages = {
-    login: 'The username or password you entered is incorrect.',
+    AUTH_INVALID_CREDENTIALS:
+        'The username or password you entered is incorrect.',
 
-    username_length: 'Username must be between 4 and 15 characters long.',
-    username_format: 'Username must start with a letter and may contain underscores (_).',
-    username_rule: 'Username cannot start or end with an underscore, and cannot contain consecutive underscores.',
+    USERNAME_LENGTH:
+        'Username must be between 4 and 15 characters long.',
+    USERNAME_FORMAT:
+        'Username must start with a letter and may contain underscores (_).',
+    USERNAME_RULE:
+        'Username cannot start or end with an underscore, and cannot contain consecutive underscores.',
 
-    password_length: 'Password must be at least 8 characters long.',
-    password_format: 'Password must contain at least one letter, one number, or one special character.',
-    password_match: 'Passwords do not match.',
+    PASSWORD_LENGTH:
+        'Password must be at least 8 characters long.',
+    PASSWORD_FORMAT:
+        'Password must contain at least one letter, one number, or one special character.',
+    PASSWORD_MISMATCH:
+        'Passwords do not match.',
 
-    email: 'Please enter a valid email address.',
+    EMAIL_INVALID:
+        'Please enter a valid email address (e.g. name@example.com).',
 }
 
 export default errMessages
