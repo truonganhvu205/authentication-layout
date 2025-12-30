@@ -1,10 +1,12 @@
 import {
     inputErr,
     clearInputErr,
+    errMessages,
 } from '../utils/index.js'
 
 const username = document.getElementById('username')
 const password = document.getElementById('password')
+const loginErr = document.getElementById('login_err')
 const loginForm = document.getElementById('login_form')
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +30,7 @@ loginForm.addEventListener('submit', e => {
     if(!username.value.trim() || !password.value.trim()) {
         inputErr(username)
         inputErr(password)
+        loginErr.innerHTML = errMessages.AUTH_INVALID_CREDENTIALS
 
         requestAnimationFrame(() => {
             username?.focus()
