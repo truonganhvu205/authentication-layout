@@ -5,6 +5,7 @@ import {
     password_isMatch,
     inputErr,
     clearInputErr,
+    errMessages,
 } from '../utils/index.js'
 
 const username = document.getElementById('username')

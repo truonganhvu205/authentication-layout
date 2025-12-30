@@ -2,6 +2,7 @@ import {
     email_isValid,
     inputErr,
     clearInputErr,
+    errMessages,
 } from '../utils/index.js'
 
 const email = document.getElementById('email')

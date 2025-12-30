@@ -3,6 +3,7 @@ import {
     password_isMatch,
     inputErr,
     clearInputErr,
+    errMessages,
 } from '../utils/index.js'
 
 const password = document.getElementById('password')

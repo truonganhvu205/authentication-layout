@@ -31,9 +31,6 @@ loginForm.addEventListener('submit', e => {
         inputErr(username)
         inputErr(password)
 
-        loginErr.classList.remove('d-none')
-        loginErr.innerHTML = errMessages.AUTH_INVALID_CREDENTIALS
-
         requestAnimationFrame(() => {
             username?.focus()
             username?.select()
