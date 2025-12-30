@@ -30,6 +30,8 @@ loginForm.addEventListener('submit', e => {
     if(!username.value.trim() || !password.value.trim()) {
         inputErr(username)
         inputErr(password)
+
+        loginErr.classList.remove('d-none')
         loginErr.innerHTML = errMessages.AUTH_INVALID_CREDENTIALS
 
         requestAnimationFrame(() => {
