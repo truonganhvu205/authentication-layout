@@ -4,6 +4,7 @@ import username_isValid from "./username_isValid.js"
 import email_isValid from "./email_isValid.js"
 import password_isValid from "./password_isValid.js"
 import password_isMatch from "./password_isMatch.js"
+import errMessages from "./errMessages.js"
 
 export {
     inputErr,
@@ -12,4 +13,5 @@ export {
     email_isValid,
     password_isValid,
     password_isMatch,
+    errMessages,
 }
